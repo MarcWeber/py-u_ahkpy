@@ -14,15 +14,16 @@ class WithWindow:
         self.match = match
 
     def __enter__(self) -> ahk.Window:
-        if stack and stack[1][1] == self.match:
+        if stack and stack[-1][1] == self.match:
             stack.append(stack[-1])
             return stack[-1][0]
         else:
             self.previous = ahk.windows.get_active()
+            print("waiting for window %s" % str(self.match))
             win = ahk.windows.wait(**self.match)
             win.activate()
             win.wait_active()
-            print("waiting for window %s" % str(self.match))
+            print("waiting for window done %s" % str(self.match))
 
             # win = ahk.all_windows.filter(title=self.title, match=self.match).first()
             # if not win.exists:
