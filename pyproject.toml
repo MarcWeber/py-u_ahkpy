@@ -1,0 +1,27 @@
+[project]
+name = "u_ahkpy"
+version = "0.0.0"  # Replace with your desired version
+description = "reusable ahkpy class focusing on window"
+authors = [
+  { name="Marc Weber", email="wanahogalugi@gmail.com" },
+]
+readme = "README.md"  # Create a README.md file for your project
+requires-python = ">=3.8"  # Specify the minimum Python version
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",  # Choose an appropriate license
+    "Operating System :: OS Independent",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["u_ahkpy*"]
+exclude = ["tests*"]
+
+[project.urls]
+"Homepage" = "https://github.com/MarcWeber/py-u_ahkpy"  # Replace with your project's URL
+"Bug Tracker" = "https://github.com/MarcWeber/py-u_ahkpy/issues" # Replace with your repo URL
